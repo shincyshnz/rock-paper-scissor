@@ -1,17 +1,21 @@
 let rounds = 1;
 let winP = 0, winC = 0;
 const result = document.querySelector('.result');
-const scoreP = document.querySelector('.scoreP'); const scoreC = document.querySelector('.scoreC'); const restart = document.querySelector('.restartGame');
+const scoreP = document.querySelector('.scoreP'); const scoreC = document.querySelector('.scoreC');
 const round = document.querySelector('.round');
 const imgClick = document.querySelectorAll('.hover');
 const resetParas = document.querySelector('.resetParas');
+
+let resetButton;
+
+
 
 function game(val) {
     const playerSelection = val;
     const computerSelection = getComputerChoice();
 
     if (rounds < 5) {
-        let players = playRound(playerSelection, computerSelection);
+        playRound(playerSelection, computerSelection);
     } else {
         if (winC == winP) {
             textChange("Tie. GAME OVER");
@@ -68,6 +72,16 @@ function playRound(playerSelection, computerSelection) {
 function getComputerChoice() {
     const choiceArray = ['rock', 'paper', 'scissor'];
     let index = Math.floor(Math.random() * choiceArray.length);
+    const imgC = document.getElementById(index);
+    imgC.style.webkitTransform = 'scale(1.5)';
+    imgC.style.msTransform = 'scale(1.5)';
+    imgC.style.transform = 'scale(1.5)';
+
+    setTimeout(function () {
+        imgC.style.webkitTransform = 'scale(1)';
+        imgC.style.msTransform = 'scale(1)';
+        imgC.style.transform = 'scale(1)';
+    }, 100);
     return choiceArray[index];
 }
 
@@ -79,14 +93,13 @@ function textChange(res) {
 }
 
 function setGameOver() {
-    console.log(imgClick);
     for (img of imgClick) {
         img.classList.remove('hover');
-        img.onclick = null;
+        //img.onclick = null;
+        img.style.pointerEvents = 'none';
     }
-
     resetButton = document.createElement('button');
-    resetButton.textContent = "New Game";
+    resetButton.textContent = "play again";
     const result = document.getElementsByClassName('resultParas');
     result[0].appendChild(resetButton);
     resetButton.addEventListener('click', resetGame);
@@ -96,16 +109,12 @@ function resetGame() {
     rounds = 1;
     winP = 0;
     winC = 0;
-    let str;
     for (img of imgClick) {
         img.classList.add('hover');
-        const imgPressed = e => {
-            return e.target.id;  // Get ID of Clicked Element
-        }
-        str = '"' + imgPressed + '"';
-        img.onclick = game(str);
+        //to disable click event on the image
+        img.style.pointerEvents = 'auto';
+
     }
-    // console.log(imgClick);
 
     const resetParas = document.querySelectorAll('.resultParas p');
     for (const resetPara of resetParas) {
@@ -113,9 +122,3 @@ function resetGame() {
     }
     resetButton.parentNode.removeChild(resetButton);
 }
-
-
-
-// console.log(playerSelection);
-// console.log(computerSelection);
-// console.log(playRound(playerSelection, computerSelection));
