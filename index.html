@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ROCK-PAPER-SCISSORS</title>
+    <link rel="stylesheet" href="css/style.css">
+
+</head>
+
+<body>
+    <header>
+        <div class="header">
+            <div class="text bounce">Rock
+                <img class="icon" src=" images/stone.png" alt="stone" max-width="100%">
+            </div>
+
+            <div class="text bounce">Paper
+                <img class="icon" src="images/paper.png" alt="paper" max-width="100%">
+            </div>
+
+            <div class="text bounce">Scissors
+                <img class="icon" src="images/scissors.png" alt="scissor" max-width="100%">
+            </div>
+        </div>
+        <hr>
+    </header>
+    <div class="playArea">
+        <div class="player">
+            <span class="heading">PLAYER</span>
+            <img class="icon hover" id="rock" src=" images/stone.png" alt="stone" onclick='game("rock")'
+                max-width="100%">
+            <img class="icon hover" id="paper" src="images/paper.png" alt="paper" onclick='game("paper")'
+                max-width="100%">
+            <img class="icon hover" id="scissor" src="images/scissors.png" alt="scissor" onclick='game("scissor")'
+                max-width="100%">
+        </div>
+        <div class="computer">
+            <span class="heading">COMPUTER</span>
+            <img class="icon" src=" images/stone.png" alt="stone" max-width="100%">
+            <img class="icon" src="images/paper.png" alt="paper" max-width="100%">
+            <img class="icon" src="images/scissors.png" alt="scissor" max-width="100%">
+        </div>
+    </div>
+
+    <div class="resultParas">
+        <p class="result"></p>
+        <p class="round"></p>
+        <p class="scoreP"></p>
+        <p class="scoreC"></p>
+        <p class="restartGame"></p>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
