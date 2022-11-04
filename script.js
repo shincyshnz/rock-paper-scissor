@@ -1,11 +1,13 @@
-let rounds = 1, winP = 0, winC = 0;
-let resetButton;
-
+let rounds = 1;
+let winP = 0, winC = 0;
 const result = document.querySelector('.result');
 const scoreP = document.querySelector('.scoreP'); const scoreC = document.querySelector('.scoreC');
 const round = document.querySelector('.round');
 const imgClick = document.querySelectorAll('.hover');
 const resetParas = document.querySelector('.resetParas');
+
+let resetButton;
+
 
 
 function game(val) {

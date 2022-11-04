@@ -1,3 +1,4 @@
 {
-    "livePreview.defaultPreviewPath": "/home/shincy/repos/rock-paper-scissor/index.html"
+    "livePreview.defaultPreviewPath": "/home/shincy/repos/rock-paper-scissor/index.html",
+    "liveServer.settings.port": 5501
 }

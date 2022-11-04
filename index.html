@@ -7,6 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ROCK-PAPER-SCISSORS</title>
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="script-new.js" defer></script>
 
 </head>
 
@@ -28,32 +30,38 @@
         <hr>
     </header>
     <div class="playArea">
+        <div class="heading">
+            <h1>PLAYER</h1>
+            <span class="fa fa-star ply "></span>
+            <span class="fa fa-star ply"></span>
+            <span class="fa fa-star ply"></span>
+            <span class="fa fa-star ply"></span>
+            <span class="fa fa-star ply"></span>
+        </div>
         <div class="player">
-            <span class="heading">PLAYER</span>
-            <img class="icon hover" id="rock" src=" images/stone.png" alt="stone" onclick='game("rock")'
-                max-width="100%">
-            <img class="icon hover" id="paper" src="images/paper.png" alt="paper" onclick='game("paper")'
-                max-width="100%">
-            <img class="icon hover" id="scissor" src="images/scissors.png" alt="scissor" onclick='game("scissor")'
-                max-width="100%">
+            <img class="icon hover" id="rock" src=" images/stone.png" alt="stone" max-width="100%">
+            <img class="icon hover" id="paper" src="images/paper.png" alt="paper" max-width="100%">
+            <img class="icon hover" id="scissor" src="images/scissors.png" alt="scissor" max-width="100%">
+        </div>
+        <div class="heading">
+            <h1>COMPUTER</h1>
+            <span class="fa fa-star comp"></span>
+            <span class="fa fa-star comp"></span>
+            <span class="fa fa-star comp"></span>
+            <span class="fa fa-star comp"></span>
+            <span class="fa fa-star comp"></span>
         </div>
         <div class="computer">
-            <span class="heading">COMPUTER</span>
-            <img class="icon" id="0" src=" images/stone.png" alt="stone" max-width="100%">
-            <img class="icon" id="1" src="images/paper.png" alt="paper" max-width="100%">
-            <img class="icon" id="2" src="images/scissors.png" alt="scissor" max-width="100%">
+            <img class="com" src="images/question.png" alt="question" max-width=" 100%">
         </div>
     </div>
+    <audio data-sound="sound" src="sounds/clap.wav"></audio>
 
     <div class="resultParas">
         <p class="result"></p>
-        <p class="round"></p>
-        <p class="scoreP"></p>
-        <p class="scoreC"></p>
         <p class="restartGame"></p>
     </div>
-
-    <script src="script.js"></script>
 </body>
+
 
 </html>
